@@ -1,0 +1,25 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version "$kotlinVersion"
+}
+
+group 'io.kabu.examples'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        google()
+    }
+
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+        kotlinOptions {
+            freeCompilerArgs += "-language-version=1.8"
+            freeCompilerArgs += "-opt-in=kotlin.ExperimentalStdlibApi"
+        }
+    }
+}
