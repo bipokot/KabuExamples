@@ -1,9 +1,9 @@
 
 # Kabu examples
 
-Contains examples of Kabu usage.
+Contains examples of [Kabu](https://github.com/bipokot/Kabu) usage.
 
-**Kabu** is an annotation processor for Kotlin which embraces a declarative way of DSLs creation.
+**[Kabu](https://github.com/bipokot/Kabu)** is an annotation processor for Kotlin which embraces a declarative way of DSLs creation.
 
 ## Modules
 Example project contains 2 modules:
@@ -14,7 +14,7 @@ Each example has a unique permanent code (`Example-XXX`).
 
 ## Pattern samples from actual tests
 
-Take a look at [pattern samples](samples) used to test Kabu itself.
+Take a look at [pattern samples](doc/samples) used to test Kabu itself.
 
 Each sample consists of three parts:
 1. `raw` - pattern itself and encoded parameters of target function placed after `//` separator
