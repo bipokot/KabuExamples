@@ -1,6 +1,6 @@
 package transaction
 
-import io.kabu.annotations.GlobalPattern
+import io.kabu.annotation.Pattern
 import io.kabu.runtime.RankingComparisonInfo
 import io.kabu.runtime.RankingComparisonInfo.GREATER
 import io.kabu.runtime.RankingComparisonInfo.LESS
@@ -11,7 +11,7 @@ data class User(
     var balance: Int
 )
 
-@GlobalPattern("send[amount] { user1 > user2 }")
+@Pattern("send[amount] { user1 > user2 }")
 fun transaction(amount: Int, user1: User, rank: RankingComparisonInfo, user2: User) {
 
     fun moveMoney(amount: Int, from: User, to: User) {

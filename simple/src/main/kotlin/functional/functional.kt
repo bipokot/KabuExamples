@@ -1,10 +1,10 @@
 package functional
 
-import io.kabu.annotations.GlobalPattern
+import io.kabu.annotation.Pattern
 
 // Example-006
 
-@GlobalPattern("block onlyIf condition")
+@Pattern("block onlyIf condition")
 fun onlyIf(block: () -> String, condition: Boolean) = if (condition) block() else null
 
 fun main() {

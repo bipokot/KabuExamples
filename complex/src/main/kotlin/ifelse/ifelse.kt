@@ -1,8 +1,8 @@
 package ifelse
 
-import io.kabu.annotations.ContextCreator
-import io.kabu.annotations.GlobalPattern
-import io.kabu.annotations.LocalPattern
+import io.kabu.annotation.ContextCreator
+import io.kabu.annotation.Pattern
+import io.kabu.annotation.LocalPattern
 
 // Example-009
 
@@ -21,7 +21,7 @@ class Actions @ContextCreator("actions") constructor() {
     }
 }
 
-@GlobalPattern("condition @Extend(context = actions(), parameter = actions) {}")
+@Pattern("condition @Extend(context = actions(), parameter = actions) {}")
 fun ifElse(condition: Boolean, actions: Actions) {
     val actionsToExecute = if (condition) actions.trueActions else actions.falseActions
     actionsToExecute.forEach { it() }

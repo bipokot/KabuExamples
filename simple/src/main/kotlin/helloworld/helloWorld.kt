@@ -1,10 +1,10 @@
 package helloworld
 
-import io.kabu.annotations.GlobalPattern
+import io.kabu.annotation.Pattern
 
 // Example-000
 
-@GlobalPattern("hello")
+@Pattern("hello")
 fun helloWorld() {
     println("Hello, World!")
 }

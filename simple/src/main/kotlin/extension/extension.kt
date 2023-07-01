@@ -1,6 +1,6 @@
 package extension
 
-import io.kabu.annotations.GlobalPattern
+import io.kabu.annotation.Pattern
 
 // Example-012
 
@@ -12,7 +12,7 @@ class Scope {
     }
 }
 
-@GlobalPattern("debug (messageBuilder)")
+@Pattern("debug (messageBuilder)")
 fun Scope.debugPostponed(messageBuilder: () -> String) {
     if (isDebug) logMessage(messageBuilder())
 }

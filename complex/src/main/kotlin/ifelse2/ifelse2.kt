@@ -1,8 +1,8 @@
 package ifelse2
 
-import io.kabu.annotations.ContextCreator
-import io.kabu.annotations.GlobalPattern
-import io.kabu.annotations.LocalPattern
+import io.kabu.annotation.ContextCreator
+import io.kabu.annotation.Pattern
+import io.kabu.annotation.LocalPattern
 
 // Example-013
 
@@ -30,12 +30,12 @@ class Actions @ContextCreator("actionsContext") constructor() {
     fun createAction(action: () -> Unit) = action
 }
 
-@GlobalPattern("condition @Extend(context = actionsContext(), parameter = actions) {}")
+@Pattern("condition @Extend(context = actionsContext(), parameter = actions) {}")
 fun ifElse(condition: Boolean, actions: Actions) {
     (if (condition) actions.trueActions else actions.falseActions).forEach { it() }
 }
 
-@GlobalPattern("condition Yoda said @Extend(context = actionsContext(), parameter = actions) {}")
+@Pattern("condition Yoda said @Extend(context = actionsContext(), parameter = actions) {}")
 fun yodaIfElse(condition: Boolean, actions: Actions) = ifElse(condition, actions)
 
 

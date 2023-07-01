@@ -1,10 +1,10 @@
 package book
 
-import io.kabu.annotations.GlobalPattern
+import io.kabu.annotation.Pattern
 
 // Example-014
 
-@GlobalPattern("print book name[author / year] .. description")
+@Pattern("print book name[author / year] .. description")
 fun printBook(name: String, description: String, year: Int, author: String) {
     println("'$name' by $author ($year)\n'$description'")
 }

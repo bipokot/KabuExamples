@@ -1,10 +1,10 @@
 package repeating
 
-import io.kabu.annotations.GlobalPattern
+import io.kabu.annotation.Pattern
 
 // Example-002
 
-@GlobalPattern("string * count")
+@Pattern("string * count")
 fun repeatString(count: Int, string: String) = buildString {
     repeat(count) { append(string) }
 }

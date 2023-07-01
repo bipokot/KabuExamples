@@ -1,8 +1,8 @@
 package team
 
-import io.kabu.annotations.ContextCreator
-import io.kabu.annotations.GlobalPattern
-import io.kabu.annotations.LocalPattern
+import io.kabu.annotation.ContextCreator
+import io.kabu.annotation.Pattern
+import io.kabu.annotation.LocalPattern
 
 // Example-007
 
@@ -54,7 +54,7 @@ class FootballTeamBuilder @ContextCreator("footballTeamBuilder") constructor() {
     }
 }
 
-@GlobalPattern("football team name @Extend(context = footballTeamBuilder(), parameter = builder) {}")
+@Pattern("football team name @Extend(context = footballTeamBuilder(), parameter = builder) {}")
 fun footballTeam(name: String, builder: FootballTeamBuilder): FootballTeam {
     return FootballTeam(name, builder.isChampion, builder.players, builder.trophies)
 }

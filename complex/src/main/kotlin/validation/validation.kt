@@ -1,8 +1,8 @@
 package validation
 
-import io.kabu.annotations.ContextCreator
-import io.kabu.annotations.GlobalPattern
-import io.kabu.annotations.LocalPattern
+import io.kabu.annotation.ContextCreator
+import io.kabu.annotation.Pattern
+import io.kabu.annotation.LocalPattern
 
 // Example-011
 
@@ -27,10 +27,10 @@ class ConditionsBuilder @ContextCreator("builder") constructor() {
     }
 }
 
-@GlobalPattern("conditions @Extend(context = builder(), parameter = context) {}")
+@Pattern("conditions @Extend(context = builder(), parameter = context) {}")
 fun defineConditions(context: ConditionsBuilder) = ValidationConditions(context.list)
 
-@GlobalPattern("failed rule { user > conditions }")
+@Pattern("failed rule { user > conditions }")
 fun getMessageOfFailedRuleOrNull(conditions: ValidationConditions, user: User): String? {
     return conditions.conditions
         .firstOrNull {
@@ -41,7 +41,7 @@ fun getMessageOfFailedRuleOrNull(conditions: ValidationConditions, user: User): 
         ?.invoke(user)
 }
 
-@GlobalPattern("validate { user > conditions }")
+@Pattern("validate { user > conditions }")
 fun validateUserWithGivenConditions(conditions: ValidationConditions, user: User) {
     conditions.conditions
         .firstOrNull { !it.condition(user) }

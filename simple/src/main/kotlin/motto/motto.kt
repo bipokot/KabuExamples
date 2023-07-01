@@ -1,10 +1,10 @@
 package motto
 
-import io.kabu.annotations.GlobalPattern
+import io.kabu.annotation.Pattern
 
 // Example-001
 
-@GlobalPattern("The.Declarative[!way] /= to * create { +{ a > DSL } } - message")
+@Pattern("The.Declarative[!way] /= to * create { +{ a > DSL } } - message")
 fun motto(message: String) = println(message)
 
 fun main() {

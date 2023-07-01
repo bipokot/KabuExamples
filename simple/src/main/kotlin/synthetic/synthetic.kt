@@ -1,10 +1,10 @@
 package synthetic
 
-import io.kabu.annotations.GlobalPattern
+import io.kabu.annotation.Pattern
 
 // Example-003
 
-@GlobalPattern("x X string X x")
+@Pattern("x X string X x")
 fun glorify(string: String) = string
 
 fun main() {

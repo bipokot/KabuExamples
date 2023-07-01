@@ -1,11 +1,11 @@
 package alphabet
 
-import io.kabu.annotations.GlobalPattern
+import io.kabu.annotation.Pattern
 import io.kabu.runtime.InclusionInfo
 
 // Example-019
 
-@GlobalPattern("a{{ b ..< c } !in -d[e, +-{f}[g][{{{}..{h.i = j}}}], k(l){ m += n} + !{o * -p(q {r[s.t.u] = v w x})}]} / y + z")
+@Pattern("a{{ b ..< c } !in -d[e, +-{f}[g][{{{}..{h.i = j}}}], k(l){ m += n} + !{o * -p(q {r[s.t.u] = v w x})}]} / y + z")
 fun alphabet(
     b: Int,
     inclusion: InclusionInfo,

@@ -1,8 +1,8 @@
 package occupation
 
-import io.kabu.annotations.ContextCreator
-import io.kabu.annotations.GlobalPattern
-import io.kabu.annotations.LocalPattern
+import io.kabu.annotation.ContextCreator
+import io.kabu.annotation.Pattern
+import io.kabu.annotation.LocalPattern
 
 // Example-017
 
@@ -16,7 +16,7 @@ class PersonBuilder @ContextCreator("personBuilder") constructor() {
     }
 }
 
-@GlobalPattern("person @Extend(context = personBuilder(), parameter = builder) {}")
+@Pattern("person @Extend(context = personBuilder(), parameter = builder) {}")
 fun printPerson(builder: PersonBuilder) {
     println("Person: ${builder.occupation}")
 }

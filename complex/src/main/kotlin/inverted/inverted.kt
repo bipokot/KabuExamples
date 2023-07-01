@@ -2,9 +2,9 @@
 
 package inverted
 
-import io.kabu.annotations.ContextCreator
-import io.kabu.annotations.GlobalPattern
-import io.kabu.annotations.LocalPattern
+import io.kabu.annotation.ContextCreator
+import io.kabu.annotation.Pattern
+import io.kabu.annotation.LocalPattern
 import inverted.OnOff.*
 
 // Example-010
@@ -28,7 +28,7 @@ class Builder @ContextCreator("ctx") constructor() {
     }
 }
 
-@GlobalPattern("@Extend(context = ctx(), parameter = builder) {} in case of fire")
+@Pattern("@Extend(context = ctx(), parameter = builder) {} in case of fire")
 fun bar(builder: Builder) {
     println("In case of fire acceleration is set to: ${builder.acceleration}")
 }

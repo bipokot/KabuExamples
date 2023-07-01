@@ -1,8 +1,8 @@
 package json
 
-import io.kabu.annotations.ContextCreator
-import io.kabu.annotations.GlobalPattern
-import io.kabu.annotations.LocalPattern
+import io.kabu.annotation.ContextCreator
+import io.kabu.annotation.Pattern
+import io.kabu.annotation.LocalPattern
 
 // Example-008
 
@@ -45,10 +45,10 @@ class JsonArrayBuilder @ContextCreator("arrayBuilder") constructor() {
     }
 }
 
-@GlobalPattern("jsonObject @Extend(context = objectBuilder(), parameter = objectBuilder) {}")
+@Pattern("jsonObject @Extend(context = objectBuilder(), parameter = objectBuilder) {}")
 fun createJsonObject(objectBuilder: JsonObjectBuilder) = JsonObject(objectBuilder.map)
 
-@GlobalPattern("jsonArray @Extend(context = arrayBuilder(), parameter = arrayBuilder) {}")
+@Pattern("jsonArray @Extend(context = arrayBuilder(), parameter = arrayBuilder) {}")
 fun createJsonArray(arrayBuilder: JsonArrayBuilder) = JsonArray(arrayBuilder.list)
 
 

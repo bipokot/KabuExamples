@@ -15,7 +15,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
     ksp "com.github.bipokot.kabu:processor:$kabuVersion"
-    compileOnly "com.github.bipokot.kabu:annotations:$kabuVersion"
+    compileOnly "com.github.bipokot.kabu:annotation:$kabuVersion"
     implementation "com.github.bipokot.kabu:runtime:$kabuVersion"
 }
 
@@ -28,9 +28,4 @@ compileTestKotlin {
 
 ksp {
     arg("ksp.io.kabu.allowUnsafe", "true")
-}
-
-sourceSets.main {
-    java.srcDirs("build/generated/ksp/main/kotlin")
-    java.srcDirs("build/generated/ksp/main/java")
 }

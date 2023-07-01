@@ -31,7 +31,7 @@ For example:
 ```
 may be interpreted as following:
 ```kotlin
-@GlobalPattern("s..b + i")
+@Pattern("s..b + i")
 fun targetFunction(s: String, b: Boolean, i: Int) {
     print(listOf(s, b, i).joinToString())
 }

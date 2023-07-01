@@ -1,8 +1,8 @@
 package taskList
 
-import io.kabu.annotations.ContextCreator
-import io.kabu.annotations.GlobalPattern
-import io.kabu.annotations.LocalPattern
+import io.kabu.annotation.ContextCreator
+import io.kabu.annotation.Pattern
+import io.kabu.annotation.LocalPattern
 
 // Example-015
 
@@ -20,7 +20,7 @@ class TaskListBuilder @ContextCreator("taskBuilder") constructor(listName: Strin
     }
 }
 
-@GlobalPattern("listName * place - @Extend(context = taskBuilder(listName, place), parameter = builder) {}")
+@Pattern("listName * place - @Extend(context = taskBuilder(listName, place), parameter = builder) {}")
 fun printTaskList(listName: String, place: String, builder: TaskListBuilder) {
     println("$listName tasks at $place:")
     builder.list.forEach { println("[ ] $it") }

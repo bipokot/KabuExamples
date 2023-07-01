@@ -1,17 +1,17 @@
 package conflictResolving
 
-import io.kabu.annotations.GlobalPattern
+import io.kabu.annotation.Pattern
 
 // Example-016
 
 // declarations inside inferred lambda go into its scope (scope narrowing)
-@GlobalPattern("name * age - { occupation * income }")
+@Pattern("name * age - { occupation * income }")
 fun printPersonInfo(occupation: String, income: Int, name: String, age: Int) {
     println("Person '$name'($age) is '$occupation'($income X)")
 }
 
 // declarations go into one shared scope
-@GlobalPattern("name % age - occupation % income")
+@Pattern("name % age - occupation % income")
 fun printPersonInfo2(occupation: String, income: Int, name: String, age: Int) {
     println("Person '$name'($age) is '$occupation'($income X)")
 }
