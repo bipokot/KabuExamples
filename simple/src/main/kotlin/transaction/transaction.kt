@@ -1,9 +1,9 @@
 package transaction
 
 import io.kabu.annotations.GlobalPattern
-import io.kabu.annotations.RankingComparisonInfo
-import io.kabu.annotations.RankingComparisonInfo.GREATER
-import io.kabu.annotations.RankingComparisonInfo.LESS
+import io.kabu.runtime.RankingComparisonInfo
+import io.kabu.runtime.RankingComparisonInfo.GREATER
+import io.kabu.runtime.RankingComparisonInfo.LESS
 
 // Example-005
 

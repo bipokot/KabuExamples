@@ -1,7 +1,7 @@
 package alphabet
 
 import io.kabu.annotations.GlobalPattern
-import io.kabu.annotations.InclusionInfo
+import io.kabu.runtime.InclusionInfo
 
 // Example-019
 
