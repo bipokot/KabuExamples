@@ -1,12 +1,13 @@
 package ifelse
 
-import io.kabu.annotation.ContextCreator
-import io.kabu.annotation.Pattern
+import io.kabu.annotation.Context
 import io.kabu.annotation.LocalPattern
+import io.kabu.annotation.Pattern
 
 // Example-009
 
-class Actions @ContextCreator("actions") constructor() {
+@Context("actions")
+class Actions {
     val trueActions = mutableListOf<() -> Unit>()
     val falseActions = mutableListOf<() -> Unit>()
 

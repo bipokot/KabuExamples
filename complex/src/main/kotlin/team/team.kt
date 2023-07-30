@@ -1,8 +1,8 @@
 package team
 
-import io.kabu.annotation.ContextCreator
-import io.kabu.annotation.Pattern
+import io.kabu.annotation.Context
 import io.kabu.annotation.LocalPattern
+import io.kabu.annotation.Pattern
 
 // Example-007
 
@@ -23,7 +23,8 @@ data class FootballTeam(
     val trophies: List<Trophy>
 )
 
-class PlayersBuilder @ContextCreator("playersBuilder") constructor() {
+@Context("playersBuilder")
+class PlayersBuilder {
     val players = mutableListOf<Player>()
 
     @LocalPattern("name - number")
@@ -32,7 +33,8 @@ class PlayersBuilder @ContextCreator("playersBuilder") constructor() {
     }
 }
 
-class FootballTeamBuilder @ContextCreator("footballTeamBuilder") constructor() {
+@Context("footballTeamBuilder")
+class FootballTeamBuilder {
 
     val trophies = mutableListOf<Trophy>()
     var isChampion = false

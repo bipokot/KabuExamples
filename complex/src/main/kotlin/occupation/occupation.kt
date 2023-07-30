@@ -1,12 +1,13 @@
 package occupation
 
-import io.kabu.annotation.ContextCreator
-import io.kabu.annotation.Pattern
+import io.kabu.annotation.Context
 import io.kabu.annotation.LocalPattern
+import io.kabu.annotation.Pattern
 
 // Example-017
 
-class PersonBuilder @ContextCreator("personBuilder") constructor() {
+@Context("personBuilder")
+class PersonBuilder {
 
     var occupation: String? = null
 

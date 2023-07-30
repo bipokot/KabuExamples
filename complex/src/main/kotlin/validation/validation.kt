@@ -1,8 +1,8 @@
 package validation
 
-import io.kabu.annotation.ContextCreator
-import io.kabu.annotation.Pattern
+import io.kabu.annotation.Context
 import io.kabu.annotation.LocalPattern
+import io.kabu.annotation.Pattern
 
 // Example-011
 
@@ -18,7 +18,8 @@ class ValidationCondition(
 
 class ValidationConditions(val conditions: List<ValidationCondition>)
 
-class ConditionsBuilder @ContextCreator("builder") constructor() {
+@Context("builder")
+class ConditionsBuilder {
     val list = mutableListOf<ValidationCondition>()
 
     @LocalPattern("check (condition) - (message)")

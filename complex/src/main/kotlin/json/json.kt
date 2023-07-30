@@ -1,8 +1,8 @@
 package json
 
-import io.kabu.annotation.ContextCreator
-import io.kabu.annotation.Pattern
+import io.kabu.annotation.Context
 import io.kabu.annotation.LocalPattern
+import io.kabu.annotation.Pattern
 
 // Example-008
 
@@ -24,7 +24,8 @@ data class JsonArray(
 }
 
 @JsonDsl
-class JsonObjectBuilder @ContextCreator("objectBuilder") constructor() {
+@Context("objectBuilder")
+class JsonObjectBuilder {
 
     val map = mutableMapOf<String, Any>()
 
@@ -35,7 +36,8 @@ class JsonObjectBuilder @ContextCreator("objectBuilder") constructor() {
 }
 
 @JsonDsl
-class JsonArrayBuilder @ContextCreator("arrayBuilder") constructor() {
+@Context("arrayBuilder")
+class JsonArrayBuilder {
 
     val list = mutableListOf<Any>()
 

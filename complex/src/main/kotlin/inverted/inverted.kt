@@ -2,10 +2,10 @@
 
 package inverted
 
-import io.kabu.annotation.ContextCreator
-import io.kabu.annotation.Pattern
-import io.kabu.annotation.LocalPattern
 import inverted.OnOff.*
+import io.kabu.annotation.Context
+import io.kabu.annotation.LocalPattern
+import io.kabu.annotation.Pattern
 
 // Example-010
 
@@ -18,7 +18,8 @@ enum class OnOff {
     on, off
 }
 
-class Builder @ContextCreator("ctx") constructor() {
+@Context("ctx")
+class Builder {
 
     var acceleration: OnOff = off
 
@@ -37,4 +38,8 @@ fun main() {
     {
         acceleration > on
     } in case of fire
+
+    /* Prints:
+    In case of fire acceleration is set to: on
+     */
 }

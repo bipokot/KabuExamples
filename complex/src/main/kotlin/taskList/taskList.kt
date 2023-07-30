@@ -1,12 +1,13 @@
 package taskList
 
-import io.kabu.annotation.ContextCreator
-import io.kabu.annotation.Pattern
+import io.kabu.annotation.Context
 import io.kabu.annotation.LocalPattern
+import io.kabu.annotation.Pattern
 
 // Example-015
 
-class TaskListBuilder @ContextCreator("taskBuilder") constructor(listName: String, place: String) {
+@Context("taskBuilder")
+class TaskListBuilder(listName: String, place: String) {
 
     init {
         println("Building '$listName' for '$place'...")

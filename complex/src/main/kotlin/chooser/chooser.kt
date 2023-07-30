@@ -1,15 +1,16 @@
 package chooser
 
-import io.kabu.annotation.ContextCreator
+import io.kabu.annotation.Context
 import io.kabu.annotation.LocalPattern
 import io.kabu.annotation.Pattern
 
 // Example-020
 
-class ChooserContext @ContextCreator("chooser") constructor(val clause: Boolean) {
+@Context("chooser")
+class ChooserContext(val clause: Boolean) {
 
     @LocalPattern("a otherwise b")
-    fun otherwise(a: String, b: String) = if (clause) a else b
+    fun <T> otherwise(a: T, b: T) = if (clause) a else b
 }
 
 @Pattern("chooseBy(clause) @Extend(context = chooser(clause), parameter = context) {}")
